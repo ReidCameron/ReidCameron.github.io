@@ -1422,7 +1422,7 @@
                 null,
                 [m('script', {
                     key: contextInfo + '_' + m.route.param('q'),
-                    src: 'http://a.cdn.searchspring.net/search/v3/js/searchspring.catalog.js',
+                    src: 'https://a.cdn.searchspring.net/search/v3/js/searchspring.catalog.js',
                     'hide-content': '.searchspring-sidebar, .searchspring-content',
                     searchspring: siteId,
                     onload: function onload() {
