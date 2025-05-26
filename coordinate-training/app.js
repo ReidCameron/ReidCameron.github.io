@@ -149,8 +149,8 @@ config.elems.startBtn.addEventListener('click', start);
 //Functions
 function getRandomSquare(current){
     function genNumber(){
-        const rank = Math.floor((Math.random() * 7 + 1));
-        const file = String.fromCharCode(97 + Math.floor((Math.random() * 7 + 1)));
+        const rank = Math.floor((Math.random() * 8)) + 1;
+        const file = String.fromCharCode(97 + Math.floor((Math.random() * 8)));
 
         if(config.options.mode == 'full'){
             return file + rank;
