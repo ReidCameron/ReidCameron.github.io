@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinate Training</title>
+
+    <link rel="stylesheet" href="./styles.css">
+
+    <script src="./app.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Coordinate Training</h1>
+        <div class="content">
+            <div class="board-container">
+                <div id="board">
+                    <div class="square"></div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="options">
+                    <h2>Options</h2>
+                    <div class="mode-option">
+                        <h3>Mode:</h3>
+                        <form>
+                            <label>Full<input type="radio" name ="mode" value="full" checked></label>
+                            <label>Rank<input type="radio" name ="mode" value="rank"></label>
+                            <label>File<input type="radio" name ="mode" value="file"></label>
+                        </form>
+                    </div>
+                    <div class="color-option">
+                        <h3>Color:</h3>
+                        <form>
+                            <label>Both<input type="radio" name ="color" value="both" checked></label>
+                            <label>White<input type="radio" name ="color" value="white"></label>
+                            <label>Black<input type="radio" name ="color" value="black"></label>
+                        </form>
+                    </div>
+                </div>
+                <div class="score">
+                    <h2>Scores</h2>
+                    <div>
+                        <label>Correct:</label>
+                        <p class="correct">0</p>
+                    </div>
+                    <div>
+                        <label>Wrong:</label>
+                        <p class="wrong">0</p>
+                    </div>
+                    <div>
+                        <label>Accuracy:</label>
+                        <p class="accuracy">0</p>
+                    </div>
+                </div>
+                <div class="start">
+                    <button>Start</button>
+                </div>
+            </div>
+        </div>
+        <div class="timeBar"></div>
+    </main>
+    
+</body>
+</html>
