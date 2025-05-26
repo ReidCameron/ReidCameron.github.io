@@ -1,0 +1,195 @@
+:root {
+    --sz: 800px;
+    --num: 8;
+    --dark-color: #ae8a69;
+    --light-color: #ecdab9;  
+    --border-color: transparent;
+    --border-width: 10px;
+}
+* {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+html, body, main{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: -1;
+    background-color: #333;
+}
+main{
+    height: 100vh;
+}
+h1{
+    margin: 0;
+    padding: 12px 0;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+h2{
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+}
+.content{
+    width: 100%;
+    padding: 40px 40px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px
+}
+.board-container{
+    width: fit-content;
+}
+#board {
+    width: var(--sz);
+    height: var(--sz);
+    background-color: white;
+    background:
+        linear-gradient(45deg, var(--light-color) 25%, transparent 25%) calc(-1*var(--sz)/var(--num)) 0,
+        linear-gradient(45deg, var(--light-color) 25%, transparent 25%) 0 calc(var(--sz)/var(--num)),
+        linear-gradient(45deg, transparent 75%, var(--light-color) 75%) calc(-1*var(--sz)/var(--num)) 0,
+        linear-gradient(45deg, transparent 75%, var(--light-color) 75%) 0 calc(var(--sz)/var(--num));
+    background-size: calc(2*var(--sz)/var(--num)) calc(2*var(--sz)/var(--num));
+    background-repeat: repeat;
+
+    position: relative;
+
+    box-shadow: 0px 0px 0px var(--border-width) var(--border-color);
+}
+#board::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-color);
+    z-index: -1;
+}
+.square {
+    font-size: 30em;
+    color: rgba(255,255,255,0.60);
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 40px #0002;
+    pointer-events: none;
+}
+
+.square.black{
+    color: rgba(0,0,0,0.50);
+    text-shadow: 0 0 40px #fff2;
+}
+
+.info {
+    background-color: #222;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 0.3fr 0.7fr auto;
+}
+.options{
+    display: grid;
+    grid-template-rows: auto 0.5fr 0.5fr;
+    justify-content: center;
+    color: white;
+}
+.mode-option, .color-option{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.options h3, .options form{
+    display: inline-block;
+    margin: 0;
+}
+.start{
+    display: grid;
+    place-items: center;
+    padding: 20px 0;
+}
+.start button{
+    background-color: green;
+    color: white;
+    text-shadow: 2px 2px #0009;
+    border: none;
+    outline: transparent;
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
+.start button:hover{
+    cursor: pointer;
+}
+
+.score div label, .score div p{
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+}
+.score div p{
+    margin: 10px 0 10px 0;
+    font-size: 4em;
+}
+.score div p.correct{
+    color: green;
+}
+.score div p.wrong{
+    color: red;
+}
+
+.timeBar{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    background-color: green;
+}
+@media (max-width: 700px) {
+    :root{
+        --sz: 300px;
+     }
+}
+@media (max-width: 1220px) and (min-width: 701px) {
+    :root{
+        --sz: 600px;
+     }
+}
+
+@media (max-width: 1220px) {
+     .info{
+        width: var(--sz);
+     }
+     .content {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+        gap: 20px;
+    }
+    .score{
+        text-align: center;
+    }
+    .score > div{
+        display: inline-block;
+    }
+    .score div label{
+        font-size: 1em;
+    }
+    .score div p{
+        font-size: 2em;
+    }
+    .square{
+        font-size: 15em;
+    }
+    h2{
+        font-size: 1.125em;
+    }
+}
